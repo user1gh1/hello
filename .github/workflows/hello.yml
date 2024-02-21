@@ -3,12 +3,11 @@ name: CI
 on:
   schedule:
 #time UTC
-    - cron: '56 12 * * *'
+    - cron: '06 13 * * *'
 jobs:
   notifier:
     runs-on: ubuntu-latest
     steps:
       - name  : Notification_success
-        if    : ${{ success() }}
         run   : curl -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage -d chat_id=${{ secrets.TELEGRAM_TO }} -d text='привет'
       
