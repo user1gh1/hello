@@ -3,7 +3,7 @@ name: CI
 on:
   schedule:
 #time UTC
-  - cron: '49 12-18 * * *'
+  - cron: '52 12 * * *'
 jobs:
   notifier:
     runs-on: ubuntu-latest
