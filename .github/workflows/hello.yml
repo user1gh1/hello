@@ -2,7 +2,7 @@ name: CI
 
 on:
   schedule:
-  - cron: '0 17-22 * * *'
+  - cron: '38 16-22 * * *'
 jobs:
   notifier:
     runs-on: ubuntu-latest
