@@ -1,15 +1,22 @@
-name: CI
+# name: CI
 
-on:
-  push:
+# on:
+#   schedule:
+#     #time UTC (Armenia +4UTC)
+#     - cron: '15 16 * * 3,4,5' #20:20 ср чт пт
+#     - cron: '45 13 * * 6' #twink
+#     - cron: '45 14 * * 6' #achive
 
-  schedule:
-#time UTC (Armenia +4UTC)
-    - cron: '20 13-18 * * *'
-jobs:
-  notifier:
-    runs-on: ubuntu-latest
-    steps:
-      - name  : Notification_success
-        run   : curl -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage -d chat_id=${{ secrets.TELEGRAM_TO }} -d text='О великий хозяин @Godlikeprofi проверка работоспособности'
-      
+# jobs:
+#   notifier:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name  : Notification_standart
+#         if: github.event.schedule == '20 16 * * 3,4,5' #20:20 ср чт пт
+#         run   : curl -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage -d chat_id=${{ secrets.TELEGRAM_TO }} -d text=''
+#       - name  : Notification_twink
+#         if: github.event.schedule == '45 13 * * 6' #twink
+#         run   : curl -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage -d chat_id=${{ secrets.TELEGRAM_TO }} -d text=''
+#       - name  : Notification_achive
+#         if: github.event.schedule == '45 14 * * 6' #achive
+#         run   : curl -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage -d chat_id=${{ secrets.TELEGRAM_TO }} -d text=''
